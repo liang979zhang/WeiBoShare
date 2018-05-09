@@ -7,6 +7,10 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
+import com.lzy.imagepicker.ui.ImageGridActivity;
+
+import static com.zdl.weiboshare.MainActivity.IMAGE_PICKER;
+
 /**
  * Created by Administrator on 2018/4/21.
  */
@@ -28,12 +32,14 @@ public class OpenFileWebChromeClient extends WebChromeClient {
         mFilePathCallbacks = filePathCallback;
 
 
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("*/*");
-        context.startActivityForResult(Intent.createChooser(intent, "File Chooser"),
-                REQUEST_FILE_PICKER);
+//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//        intent.addCategory(Intent.CATEGORY_OPENABLE);
+//        intent.setType("*/*");
+//        context.startActivityForResult(Intent.createChooser(intent, "File Chooser"),
+//                REQUEST_FILE_PICKER);
 
+        Intent intent = new Intent(context, ImageGridActivity.class);
+        context.startActivityForResult(intent, IMAGE_PICKER);
 
         return true;
     }
@@ -70,4 +76,5 @@ public class OpenFileWebChromeClient extends WebChromeClient {
         context.startActivityForResult(Intent.createChooser(intent, "File Chooser"),
                 REQUEST_FILE_PICKER);
     }
+
 }

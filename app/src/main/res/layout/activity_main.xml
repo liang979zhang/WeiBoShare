@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.zdl.weiboshare.MainActivity">
 
-
-    <WebView
-        android:id="@+id/webview"
+    <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/pulltorefresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+    </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
+
 
 </LinearLayout>

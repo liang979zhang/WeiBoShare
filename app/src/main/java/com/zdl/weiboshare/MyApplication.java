@@ -32,7 +32,7 @@ public class MyApplication extends Application {
                 new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
 
         //log拦截器
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT);
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         //自定义OkHttp
